@@ -21,8 +21,8 @@ async function sendEmail(to, id, campaign) {
     // Email content with tracking image
     const html = `
       <p>👋 Hello ${to},</p>
-      <h2>Check out th:</h2>
-      <img src="https://mail-tracker-chi.vercel.app/api/track?id=abc123&rcpt=gauravsingh7305@gmail.com&camp=promo1"
+      <h2>hello how are you</h2>
+      <img src="https://png.pngtree.com/png-vector/20190330/ourmid/pngtree-img-file-document-icon-png-image_893028.jpg"
            width="2"
            alt="Promo Image">
       <p>Cheers,<br>Mohd Sameer</p>
