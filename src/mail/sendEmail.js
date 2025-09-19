@@ -22,7 +22,7 @@ async function sendEmail(to, id, campaign) {
     const html = `
       <p>👋 Hello ${to},</p>
       <h2>hello how are you</h2>
-      <img src="https://png.pngtree.com/png-vector/20190330/ourmid/pngtree-img-file-document-icon-png-image_893028.jpg"
+      <img src="https://mail-tracker-chi.vercel.app/api/track/open.png"
            width="2"
            alt="Promo Image">
       <p>Cheers,<br>Mohd Sameer</p>

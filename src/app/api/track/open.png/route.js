@@ -1,13 +1,10 @@
 import { connectToDatabase } from "@/lib/mongodb";
-
-const PIXEL_PNG = Buffer.from(
-  "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wIAAgMB9CtH/wAAAABJRU5ErkJggg==",
-  "base64"
-);
+import { promises as fs } from "fs";
+import path from "path";
 
 export async function GET(req) {
   try {
-    const { searchParams } = new URL(req.url);
+    const { searchParams, pathname } = new URL(req.url);
 
     const id = searchParams.get("id") || "unknown_id";
     const recipient = searchParams.get("rcpt") || "unknown_recipient";
@@ -30,11 +27,15 @@ export async function GET(req) {
       userAgent: req.headers.get("user-agent") || "unknown",
     });
 
-    return new Response(PIXEL_PNG, {
+    // Serve actual image from /public/promo.png
+    const filePath = path.join(process.cwd(), "public", "track.png");
+    const fileBuffer = await fs.readFile(filePath);
+
+    return new Response(fileBuffer, {
       status: 200,
       headers: {
         "Content-Type": "image/png",
-        "Content-Length": PIXEL_PNG.length.toString(),
+        "Content-Length": fileBuffer.length.toString(),
         "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
       },
     });
