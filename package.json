@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "send:mail": "node src/mail/sendEmail.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "mongodb": "^6.20.0",
     "next": "15.5.3",
+    "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

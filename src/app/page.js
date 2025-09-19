@@ -12,6 +12,9 @@ export default function Home() {
           height={38}
           priority
         />
+           <img src="https://mail-tracker-chi.vercel.app/api/track?id=abc123&rcpt=gauravsingh7305@gmail.com&camp=promo1"
+           width="2"
+           alt="Promo Image"/>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
